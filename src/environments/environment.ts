@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://api.themoviedb.org/3',
+  apiKey: "api_key=49cfdb743cedde0892fc3dbfb373fe4b"
 };

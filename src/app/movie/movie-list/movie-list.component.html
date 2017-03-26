@@ -1,0 +1,5 @@
+<ul *ngIf="model">
+  <li *ngFor="let item of model.results">
+    <app-movie-card [item]="item"></app-movie-card>
+  </li>
+</ul>

@@ -1,0 +1,7 @@
+<div *ngIf="model">
+  <ul>
+    <li *ngFor="let item of model.results">
+      <a [routerLink]="['/people', item.id]">{{item.name}}</a>
+    </li>
+  </ul>
+</div>
