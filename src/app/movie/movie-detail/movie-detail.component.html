@@ -1,7 +1,7 @@
 <div *ngIf="model">
   <h1>{{model.title}}</h1>
   <p>{{model.overview}}</p>
-  <img src="poster_path" alt="">
+  <img src="https://image.tmdb.org/t/p/w500/{{model.poster_path}}" alt="">
   <h4>Genre</h4>
   <ul>
     <li *ngFor="let item of model.genres">
