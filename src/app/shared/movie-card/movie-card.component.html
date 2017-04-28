@@ -1,5 +1,17 @@
-<p>
-  <a [routerLink]="['/movie', item.id]">{{item.title}}</a> 
-  
-  <img src="https://image.tmdb.org/t/p/w92{{item.poster_path}}" alt="">
-</p>
+<div class="movie-card">
+  <div class="thumbnail">
+    <a class="title" [routerLink]="['/movie', item.id]">
+      <img src="https://image.tmdb.org/t/p/w92{{item.poster_path}}" alt="">
+    </a>
+  </div>
+  <div class="meta">
+    <a class="title" [routerLink]="['/movie', item.id]">{{item.title}}</a> 
+    <div class="genre">Comedy, Romance</div>
+    <div>TV Show</div>
+    <footer>
+      More Info
+    </footer>
+  </div>
+</div>
+
+

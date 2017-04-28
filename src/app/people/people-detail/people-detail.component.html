@@ -1,19 +1,41 @@
 <div *ngIf="model">
-  <h1>{{model.name}}</h1>
-  <img src="https://image.tmdb.org/t/p/w500/{{model.profile_path}}" alt="">
-  <p>
-    {{model.biography}}
-  </p>
-  <ul>
-    <li *ngFor="let item of model.movie_credits.cast">
-      <a [routerLink]="['/movie', item.id]">{{item.title}}</a>
-    </li>
-  </ul>
+  <div class="people-detail flex">
+    <div class="profile-photo">
+      <img src="https://image.tmdb.org/t/p/w500/{{model.profile_path}}" alt="">
+    </div>
+    <div class="info">
+      <h1>{{model.name}}</h1>
+      <h3>Biography</h3>
+      <p>
+        {{model.biography}}
+      </p>
+      <ul class="item-list">
+        <li *ngFor="let item of model.movie_credits.cast">
+          <div class="image">
+            <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+          </div>
+          <div class="meta">
+            <a class="title" [routerLink]="['/movie', item.id]">{{item.title}}</a> <br>
 
-  <ul>
-    <li *ngFor="let item of model.tv_credits.cast">
-      {{item.name}}
-    </li>
-  </ul>
+          </div>
+
+        </li>
+      </ul>
+
+      <ul>
+        <li *ngFor="let item of model.tv_credits.cast">
+          <div class="image">
+            <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+          </div>
+          <div class="meta">
+            <a class="title" [routerLink]="['/people', item.id]">{{item.title}}</a> <br>
+            
+          </div>
+        </li>
+      </ul>
+      
+    </div>
+    
+  </div>
 
 </div>

@@ -1,0 +1,48 @@
+form{
+    position: relative;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+.results{
+    position: relative;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+.close{
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 26px;
+}
+.result-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #FFF;
+
+    li{
+        padding: .5rem 1rem;
+        &:hover{
+            background-color: #c2c2c2;
+        }
+    }
+    .image{
+        display: inline-block;
+        vertical-align: top;
+        img{
+            float: left;
+        }
+    }
+    .meta{
+        margin-left: .5rem;
+        margin-top: .5rem;
+        display: inline-block;
+        a{
+            color: inherit;
+        }
+    }
+}

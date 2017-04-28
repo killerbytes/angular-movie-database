@@ -1,17 +1,22 @@
 <header>
-  <nav>
-    <ul>
-      <li><a routerLink="discover">Discover</a> </li>
-      <li><a routerLink="movie">Movies</a> 
+    <nav class="menu">
+      <div class="container">
         <ul>
-          <li><a routerLink="movie">Popular</a> </li>
-          <li><a routerLink="movie/top-rated">Top Rated</a> </li>
-          <li><a routerLink="movie/upcoming">Upcoming</a> </li>
-          <li><a routerLink="movie/now-playing">Now Playing</a> </li>
+          <li><a routerLink="discover">Discover</a> </li>
+          <li><a routerLink="movie">Movies</a> 
+            <ul>
+              <li><a routerLink="movie">Popular</a> </li>
+              <li><a routerLink="movie/top-rated">Top Rated</a> </li>
+              <li><a routerLink="movie/upcoming">Upcoming</a> </li>
+              <li><a routerLink="movie/now-playing">Now Playing</a> </li>
+            </ul>
+          </li>
+          <li>TV Shows</li>
+          <li><a routerLink="people">People</a></li>
         </ul>
-      </li>
-      <li>TV Shows</li>
-      <li><a routerLink="people">People</a></li>
-    </ul>
-  </nav>
+      </div>
+    </nav>
+    <app-search-box></app-search-box>      
+
+
 </header>

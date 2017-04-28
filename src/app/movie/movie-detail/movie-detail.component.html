@@ -1,21 +1,39 @@
 <div *ngIf="model">
-  <h1>{{model.title}}</h1>
-  <p>{{model.overview}}</p>
-  <img src="https://image.tmdb.org/t/p/w500/{{model.poster_path}}" alt="">
-  <h4>Genre</h4>
-  <ul>
-    <li *ngFor="let item of model.genres">
-      <a [routerLink]="['/genre', item.id]">{{item.name}}</a>
-    </li>
-  </ul>
-  <ul *ngIf="model.credits">
-    <li *ngFor="let item of model.credits.cast">
-      <a [routerLink]="['/people', item.id]">{{item.name}}</a>
-    </li>
-  </ul>
-  <ul *ngIf="model.recommendations">
-    <li *ngFor="let item of model.recommendations.results">
-      <a [routerLink]="['/movie', item.id]">{{item.title}}</a>
-    </li>
-  </ul>
+  <div class="flex movie-detail">
+    <div class="poster">
+      <img src="https://image.tmdb.org/t/p/w500/{{model.poster_path}}" alt="">
+    </div>
+    <div class="info">
+      <h1>{{model.title}}</h1>
+      <ul class="genre">
+        <li *ngFor="let item of model.genres; let last = last">
+          <a [routerLink]="['/genre', item.id]">{{item.name}}</a>{{last ? "": ',&nbsp;'}}
+        </li>
+      </ul>
+      <h3>Overview</h3>
+      <p>{{model.overview}}</p>
+      <h3>Cast</h3>
+      <ul class="item-list" *ngIf="model.credits">
+        <li *ngFor="let item of model.credits.cast">
+          <div class="image">
+            <img src="https://image.tmdb.org/t/p/w45/{{item.profile_path}}" alt="">            
+          </div>
+          <div class="meta">
+            <a class="name" [routerLink]="['/people', item.id]">{{item.name}}</a> <br>
+            <div class="character">
+              {{item.character}}
+            </div>
+          </div>
+
+        </li>
+      </ul>
+      <ul *ngIf="model.recommendations">
+        <li *ngFor="let item of model.recommendations.results">
+          <a [routerLink]="['/movie', item.id]">{{item.title}}</a>
+        </li>
+      </ul>
+      
+    </div>
+
+  </div>
 </div>

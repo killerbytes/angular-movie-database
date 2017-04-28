@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css'],
+  styleUrls: ['./movie-list.component.scss'],
   providers: [MovieService]
 })
 export class MovieListComponent implements OnInit {

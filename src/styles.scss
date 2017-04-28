@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+$body-bg: #ededed;
+$border-color: #bfbfbf;
+$text-color: #686868;
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body{
+    background-color: $body-bg; 
+}
+a{
+    text-decoration: none;
+}
+header{
+    background: #FFF;
+    margin-bottom: 1rem;
+    input{
+        padding: 1rem;
+        font-size: 26px;
+        width: 100%;
+        border: none;
+    }
+    .menu{
+        border-bottom: 1px solid $border-color;
+        ul{
+            margin: 0;
+            padding: 1rem 0;
+        }
+        a{
+            color: $text-color;
+        }
+        li{
+            display: inline-block;            
+            ul{
+                display: none;
+            }
+        }
+    }
+}
+.flex{
+    display: flex;
+}
+.movie-detail,
+.people-detail{
+    h3{
+        font-weight: normal;
+        margin-bottom: .5rem;
+    }
+    p{
+        margin-top: 0;
+    }
+    .poster,
+    .profile-photo{
+        flex-basis: 30%;
+        img{
+            width: 100%;
+        }
+    }
+    .info{
+        flex-basis: 70%;
+        padding-left: 1rem;
+        h1{
+            margin-top: 0;
+        }
+    }
+    .genre{
+        margin: 0;
+        padding: 0;
+        font-style: italic;
+        li{
+            display: inline-block;
+            a{
+                color: inherit;
+            }
+        }
+
+    }
+}
+.container{
+    max-width: 980px;
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.movie-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: wrap;
+    li{
+        flex: 50%;
+    }
+}
+.movie-card{
+    display: flex;
+    .meta{
+        color: $text-color;
+        padding-left: 1rem;
+        .title{
+            display: block;
+            font-weight: bold;
+            font-size: 120%;
+            color: $text-color;
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+
+.item-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+        display: flex;
+        margin-bottom: .5rem;
+    }
+    .meta{
+        padding-left: .5rem;
+        .name,
+        .title{
+            font-weight: bold;
+            color: inherit;
+        }
+        .character{
+            font-style: italic;
+        }
+    }
+}

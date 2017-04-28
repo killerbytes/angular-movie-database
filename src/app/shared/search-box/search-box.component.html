@@ -1,8 +1,18 @@
-<form>
-  <input type="text" (keyup)="onKey($event)">
-</form>
-<ul *ngIf="model">
-  <li *ngFor="let item of model.results">
-    <a [routerLink]="['/movie', item.id]">{{item.title || item.name}}</a>
-  </li>
-</ul>
+<div class="container">
+  <form>
+    <input type="text" (keyup)="onKey($event)" id="search" [(ngModel)]="query" name="search" placeholder="Search for Movies, TV Shows and Celebrities">
+    <a class="close" (click)="close()" *ngIf="query" >&times;</a>
+  </form>
+  <div class="results" *ngIf="query">
+    <ul class="result-list" *ngIf="model">
+      <li *ngFor="let item of model.results">
+        <div class="image">
+          <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+        </div>
+        <div class="meta">
+          <a [routerLink]="['/movie', item.id]">{{item.title || item.name}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
