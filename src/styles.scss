@@ -72,19 +72,19 @@ header{
             margin-top: 0;
         }
     }
-    .genre{
-        margin: 0;
-        padding: 0;
-        font-style: italic;
-        li{
-            display: inline-block;
-            a{
-                color: inherit;
-            }
+}
+.genre{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    li{
+        display: inline-block;
+        a{
+            color: inherit;
         }
-
     }
 }
+
 .container{
     max-width: 980px;
     margin: auto;

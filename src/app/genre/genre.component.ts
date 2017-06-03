@@ -8,7 +8,6 @@ import 'rxjs/Rx';
   selector: 'app-genre',
   templateUrl: './genre.component.html',
   styleUrls: ['./genre.component.css'],
-  providers: [GenreService]
 })
 export class GenreComponent implements OnInit {
     model: any;
@@ -22,8 +21,8 @@ export class GenreComponent implements OnInit {
     this.route.params.subscribe(res=>{
       let id = res['id'];
       
-      this.genreService.queryGenre('movie').subscribe(res=>{
-        this.genre = res.genres.find(i=>{ return i.id==id});
+      this.genreService.queryGenre('movie').then(res=>{
+        this.genre = res['genres'].find(i=>{ return i.id==id});
       })
 
 

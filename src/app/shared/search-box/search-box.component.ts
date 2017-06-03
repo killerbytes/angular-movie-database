@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from "app/services/search.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-search-box',
@@ -11,7 +12,11 @@ export class SearchBoxComponent implements OnInit {
     model: any;
     query: string;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService, private router: Router) { 
+    router.events.subscribe(val=>{
+      this.query = "";
+    })
+  }
 
   ngOnInit() {
   }
@@ -22,5 +27,10 @@ export class SearchBoxComponent implements OnInit {
     this.searchService.query(e.target.value).subscribe(res=>{
       this.model = res;
     })
+  }
+
+  onSelect(e, item){
+    e.preventDefault();
+    console.log(e, item)
   }
 }

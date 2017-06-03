@@ -10,6 +10,8 @@ import { PeopleComponent } from "app/people/people.component";
 import { GenreComponent } from "app/genre/genre.component";
 import { PeopleIndexComponent } from "app/people/people-index/people-index.component";
 import { PeopleDetailComponent } from "app/people/people-detail/people-detail.component";
+import { TvComponent } from "./tv/tv.component";
+import { TvDetailComponent } from "./tv/tv-detail/tv-detail.component";
 
 export const router: Routes = [
     { path: '', redirectTo: 'movie', pathMatch: 'full' },
@@ -28,6 +30,11 @@ export const router: Routes = [
             { path: 'upcoming', component: MovieListComponent, data: {type: 'upcoming'} },
             { path: 'now-playing', component: MovieListComponent, data: {type: 'now_playing'} },
             { path: ':id', component: MovieDetailComponent },
+        ]
+     },
+    { path: 'tv', component: TvComponent, 
+        children: [
+            { path: ':id', component: TvDetailComponent },
         ]
      },
     { path: 'discover', component: DiscoverComponent }

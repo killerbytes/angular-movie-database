@@ -1,7 +1,8 @@
 <div *ngIf="model">
   <div class="people-detail flex">
     <div class="profile-photo">
-      <img src="https://image.tmdb.org/t/p/w500/{{model.profile_path}}" alt="">
+      <img *ngIf="!model.profile_path" src="http://via.placeholder.com/214x322" alt="">
+      <img *ngIf="model.profile_path" src="https://image.tmdb.org/t/p/w500/{{model.profile_path}}" alt="">
     </div>
     <div class="info">
       <h1>{{model.name}}</h1>
@@ -9,10 +10,12 @@
       <p>
         {{model.biography}}
       </p>
+      <h3>Movie Credits</h3>
       <ul class="item-list">
-        <li *ngFor="let item of model.movie_credits.cast">
+        <li *ngFor="let item of movies">
           <div class="image">
-            <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
+            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
           </div>
           <div class="meta">
             <a class="title" [routerLink]="['/movie', item.id]">{{item.title}}</a> <br>
@@ -21,19 +24,19 @@
 
         </li>
       </ul>
-
-      <ul>
+      <h3>TV Credits</h3>
+      <ul class="item-list">
         <li *ngFor="let item of model.tv_credits.cast">
           <div class="image">
-            <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
+            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
           </div>
           <div class="meta">
-            <a class="title" [routerLink]="['/people', item.id]">{{item.title}}</a> <br>
+            <a class="title" [routerLink]="['/tv', item.id]">{{item.name}}</a> <br>
             
           </div>
         </li>
       </ul>
-      
     </div>
     
   </div>

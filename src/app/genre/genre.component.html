@@ -1,8 +1,9 @@
 <h1 *ngIf="genre">{{genre.name}}</h1>
 <div *ngIf="model">
-  <ul>
+  <ul class="movie-list">
     <li *ngFor="let item of model.results">
-      <a [routerLink]="['/movie', item.id]">{{item.title}}</a>
+      <app-movie-card [item]="item"></app-movie-card>
+
     </li>
   </ul>
 </div>

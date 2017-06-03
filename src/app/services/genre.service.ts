@@ -5,12 +5,24 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class GenreService {
+  genres: any;
 
   constructor(private http:Http) { }
 
   queryGenre(type){
-    return this.http.get(`${environment.apiUrl}/genre/${type}/list?${environment.apiKey}`)
-    .map(res=> res.json());
+    return new Promise((resolve, reject) => {
+      if(this.genres){
+
+        resolve(this.genres);
+      }else{
+        this.http.get(`${environment.apiUrl}/genre/${type}/list?${environment.apiKey}`)
+        .map(res=> res.json())
+        .subscribe(res=>{
+          resolve(res);
+          this.genres = res;
+        })
+      }
+    });
   }
 
   findRecord(id){

@@ -10,14 +10,15 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class MovieDetailComponent implements OnInit {
   model: any;
+  cast: any;
   constructor(private movieService:MovieService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(res=>{
-    this.movieService.findRecord(res['id']).subscribe(res=>{
-      this.model = res;
-    })
-      
+      this.movieService.findRecord(res['id']).subscribe(res=>{
+        this.model = res;
+        this.cast = this.model.credits.cast.slice(0, 5);
+      })
     })
   }
 

@@ -18,6 +18,10 @@ import { GenreComponent } from './genre/genre.component';
 import { PeopleIndexComponent } from './people/people-index/people-index.component';
 import { PeopleDetailComponent } from './people/people-detail/people-detail.component';
 import { SearchBoxComponent } from './shared/search-box/search-box.component';
+import { GenresComponent } from './shared/genres/genres.component';
+import { GenreService } from "./services/genre.service";
+import { TvComponent } from './tv/tv.component';
+import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { SearchBoxComponent } from './shared/search-box/search-box.component';
     GenreComponent,
     PeopleIndexComponent,
     PeopleDetailComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    GenresComponent,
+    TvComponent,
+    TvDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,7 @@ import { SearchBoxComponent } from './shared/search-box/search-box.component';
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [GenreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

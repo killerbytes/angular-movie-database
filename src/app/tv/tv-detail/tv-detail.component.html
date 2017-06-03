@@ -16,7 +16,8 @@
       <ul class="item-list" *ngIf="model.credits">
         <li *ngFor="let item of cast">
           <div class="image">
-            <img src="https://image.tmdb.org/t/p/w45/{{item.profile_path}}" alt="">            
+            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
+            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.profile_path}}" alt="">            
           </div>
           <div class="meta">
             <a class="name" [routerLink]="['/people', item.id]">{{item.name}}</a> <br>
@@ -31,11 +32,11 @@
       <ul class="item-list">
         <li *ngFor="let item of model.recommendations.results">
           <div class="image">
-            <img src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
+            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
           </div>
           <div class="meta">
-            <a class="title" [routerLink]="['/movie', item.id]">{{item.title}}</a> <br>
-
+            <a class="title" [routerLink]="['/tv', item.id]">{{item.name}}</a> <br>
           </div>
 
         </li>
