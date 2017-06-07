@@ -3,7 +3,8 @@
       <div class="container">
         <ul>
           <li><a routerLink="discover">Discover</a> </li>
-          <li><a routerLink="movie">Movies</a> 
+          <li>
+            <a routerLink="movie">Movies</a> 
             <ul>
               <li><a routerLink="movie">Popular</a> </li>
               <li><a routerLink="movie/top-rated">Top Rated</a> </li>
@@ -11,7 +12,15 @@
               <li><a routerLink="movie/now-playing">Now Playing</a> </li>
             </ul>
           </li>
-          <li>TV Shows</li>
+          <li>
+            <a routerLink="tv">TV Shows</a>
+            <ul>
+              <li><a routerLink="tv">Popular</a> </li>
+              <li><a [routerLink]="['tv', 'top-rated']">Top Rated</a> </li>
+              <li><a [routerLink]="['tv', 'upcoming']">Upcoming</a> </li>
+              <li><a [routerLink]="['tv', 'now-playing']">Now Playing</a> </li>
+            </ul>
+          </li>
           <li><a routerLink="people">People</a></li>
         </ul>
       </div>

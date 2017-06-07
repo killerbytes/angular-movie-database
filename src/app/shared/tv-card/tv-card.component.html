@@ -1,0 +1,17 @@
+<div class="movie-card">
+  <div class="thumbnail">
+    <a class="title" [routerLink]="['/movie', item.id]">
+      <img src="https://image.tmdb.org/t/p/w92{{item.poster_path}}" alt="">
+    </a>
+  </div>
+  <div class="meta">
+    <a class="title" [routerLink]="['/tv', item.id]">{{item.name}}</a> 
+    <app-genres [type]="'tv'" [item]="item.genre_ids"></app-genres>
+    <footer>
+      {{item.vote_average}} <br>  
+      {{item.release_date}}
+    </footer>
+  </div>
+</div>
+
+

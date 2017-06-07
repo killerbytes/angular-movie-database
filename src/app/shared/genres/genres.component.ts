@@ -9,14 +9,13 @@ import { GenreService } from "../../services/genre.service";
 export class GenresComponent implements OnInit {
   genres: any;
   @Input() item;
+  @Input() type;
 
   constructor(private genreService: GenreService) {}
 
   ngOnInit() {
-  this.genreService.queryGenre('movie').then(res=>{
-    
-    this.genres = this.item.map(id=>res['genres'].find(i=>{ return i.id==id}))
-
+  this.genreService.queryGenre().then(res=>{
+    this.genres = this.item.map(id=>res.find(i=>{ return i.id==id }))
   })
 
   }

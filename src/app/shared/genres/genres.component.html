@@ -1,4 +1,4 @@
-<ul class="genre">
+<ul class="genre" *ngIf="genres">
   <li *ngFor="let item of genres; let last = last">
     <a [routerLink]="['/genre', item.id]">{{item.name}}</a>{{last ? "": ',&nbsp;'}}
   </li>

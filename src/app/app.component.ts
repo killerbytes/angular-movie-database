@@ -12,9 +12,7 @@ export class AppComponent implements OnInit{
   constructor(private genreService:GenreService) { }
 
   ngOnInit() {
-    this.genreService.queryGenre('movie').then(res=>{
-    })
-
+    this.genreService.queryGenre()
   }
 
 }

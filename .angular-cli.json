@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/normalize.css/normalize.css",
+        "sass/variables.scss",
         "styles.scss"
       ],
       "scripts": [],

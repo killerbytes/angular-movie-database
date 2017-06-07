@@ -22,6 +22,8 @@ import { GenresComponent } from './shared/genres/genres.component';
 import { GenreService } from "./services/genre.service";
 import { TvComponent } from './tv/tv.component';
 import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
+import { TvListComponent } from './tv/tv-list/tv-list.component';
+import { TvCardComponent } from './shared/tv-card/tv-card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { TvDetailComponent } from './tv/tv-detail/tv-detail.component';
     SearchBoxComponent,
     GenresComponent,
     TvComponent,
-    TvDetailComponent
+    TvDetailComponent,
+    TvListComponent,
+    TvCardComponent
   ],
   imports: [
     BrowserModule,

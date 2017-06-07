@@ -6,13 +6,15 @@
   <div class="results" *ngIf="query">
     <ul class="result-list" *ngIf="model">
       <li *ngFor="let item of model.results">
-        <div class="image">
-          <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">            
-          <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
-        </div>
-        <div class="meta">
-          <a [routerLink]="['/'+item.media_type, item.id]">{{item.title || item.name}}</a>
-        </div>
+        <a [routerLink]="['/'+item.media_type, item.id]">
+          <div class="image">
+            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">            
+            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+          </div>
+          <div class="meta">
+            {{item.title || item.name}}
+          </div>
+        </a>
       </li>
     </ul>
   </div>

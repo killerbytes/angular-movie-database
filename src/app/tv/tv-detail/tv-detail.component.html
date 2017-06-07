@@ -12,38 +12,38 @@
       </ul>
       <h3>Overview</h3>
       <p>{{model.overview}}</p>
-      <h3>Cast</h3>
-      <ul class="item-list" *ngIf="model.credits">
-        <li *ngFor="let item of cast">
-          <div class="image">
-            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
-            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.profile_path}}" alt="">            
-          </div>
-          <div class="meta">
-            <a class="name" [routerLink]="['/people', item.id]">{{item.name}}</a> <br>
-            <div class="character">
-              {{item.character}}
+      <ng-container *ngIf="cast.length">
+        <h3>Cast</h3>
+        <ul class="item-list" *ngIf="model.credits">
+          <li *ngFor="let item of cast">
+            <div class="image">
+              <img *ngIf="!item.profile_path" src="http://via.placeholder.com/45x66" alt="">
+              <img *ngIf="item.profile_path" src="https://image.tmdb.org/t/p/w45/{{item.profile_path}}" alt="">            
             </div>
-          </div>
+            <div class="meta">
+              <a class="name" [routerLink]="['/people', item.id]">{{item.name}}</a> <br>
+              <div class="character">
+                {{item.character}}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-container *ngIf="model.recommendations.results.length">
+        <h3>Recommended</h3>
+        <ul class="item-list">
+          <li *ngFor="let item of model.recommendations.results">
+            <div class="image">
+              <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
+              <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
+            </div>
+            <div class="meta">
+              <a class="title" [routerLink]="['/tv', item.id]">{{item.name}}</a> <br>
+            </div>
 
-        </li>
-      </ul>
-      <h3>Recommended</h3>
-      <ul class="item-list">
-        <li *ngFor="let item of model.recommendations.results">
-          <div class="image">
-            <img *ngIf="!item.poster_path" src="http://via.placeholder.com/45x66" alt="">
-            <img *ngIf="item.poster_path" src="https://image.tmdb.org/t/p/w45/{{item.poster_path}}" alt="">            
-          </div>
-          <div class="meta">
-            <a class="title" [routerLink]="['/tv', item.id]">{{item.name}}</a> <br>
-          </div>
-
-        </li>
-      </ul>
-      
-      
+          </li>
+        </ul>
+      </ng-container>
     </div>
-
   </div>
 </div>

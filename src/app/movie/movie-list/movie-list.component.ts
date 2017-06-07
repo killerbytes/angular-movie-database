@@ -14,7 +14,6 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     let type = this.route.snapshot.data['type'];
-    console.log(type)
 
     this.movieService.findRecords(type).subscribe((res)=>{
       this.model = res;

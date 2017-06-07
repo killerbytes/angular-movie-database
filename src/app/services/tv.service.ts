@@ -15,4 +15,10 @@ export class TvService {
       .map(res=>res.json());
   }
 
+  findRecords(type){
+    return this.http.get(`${environment.apiUrl}/tv/${type}?${environment.apiKey}`)
+      .map(res=>res.json());
+  }
+  
+
 }

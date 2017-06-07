@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$body-bg: #ededed;
-$border-color: #bfbfbf;
-$text-color: #686868;
+@import "sass/variables";
 
 html {
   -webkit-box-sizing: border-box;
@@ -21,7 +19,7 @@ a{
     text-decoration: none;
 }
 header{
-    background: #FFF;
+    background: $header-bg;
     margin-bottom: 1rem;
     input{
         padding: 1rem;
@@ -30,19 +28,8 @@ header{
         border: none;
     }
     .menu{
-        border-bottom: 1px solid $border-color;
-        ul{
-            margin: 0;
-            padding: 1rem 0;
-        }
         a{
             color: $text-color;
-        }
-        li{
-            display: inline-block;            
-            ul{
-                display: none;
-            }
         }
     }
 }

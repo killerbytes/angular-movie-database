@@ -9,12 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   providers: [TvService]
 })
 export class TvDetailComponent implements OnInit {
-  cast: any;
+  cast: any[];
   model: any;
 
 
-  constructor(private tvService: TvService, private route: ActivatedRoute) { }
-
+  constructor(private tvService: TvService, private route: ActivatedRoute) { 
+  }
   ngOnInit() {
     this.route.params.subscribe(res=>{
       this.tvService.findRecord(res['id']).subscribe(res=>{

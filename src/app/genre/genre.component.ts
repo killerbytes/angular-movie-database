@@ -21,7 +21,7 @@ export class GenreComponent implements OnInit {
     this.route.params.subscribe(res=>{
       let id = res['id'];
       
-      this.genreService.queryGenre('movie').then(res=>{
+      this.genreService.queryGenre().then(res=>{
         this.genre = res['genres'].find(i=>{ return i.id==id});
       })
 
